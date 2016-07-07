@@ -20,10 +20,10 @@ printPositives([1, -2, 3, -4, 5, -6, 7, 8]);
 /* Similar to the previous exercise, write a function called getPositives that takes an 
 array and uses the filter method to return a new array with only the positive numbers. */
 
-function getPositives (array) {
-    return array.filter(function (item) {
+function getPositives(array) {
+    return array.filter(function(item) {
         return item > 0;
-        });
+    });
 }
 
 console.log(getPositives([1, -2, 3, -4, 5, -6, 7, 8]));
@@ -35,15 +35,16 @@ console.log(getPositives([1, -2, 3, -4, 5, -6, 7, 8]));
 from the filtered array. Your code will look something like:
 `return arr.filter(…).forEach(…) */
 
-function getPositives2 (array) {
-    return array.filter(function (item) {
+function getPositives2(array) {
+    return array.filter(function(item) {
         return item > 0;
-        }).forEach (function(item) {
-            console.log(item);
-        })
+    }).forEach(function(item) {
+        console.log(item);
+    })
 }
 
 getPositives2([1, -2, 3, -4, 5, -6, 7, 8]);
+
 
 
 // Exercise 3
@@ -56,8 +57,40 @@ NOTE: You are allowed to use Array.prototype.filter to answer this question.
 
 NOTE 2: This is a bit of a trick question, the answer is a one-liner :) */
 
-function filterArray (array, func) { return array.filter(func) }
+function filterArray(array, func) {
+    return array.filter(func)
+}
+
+
+// How to call the function filterArry if we have a function that returns true:
+
+// function isPos (number) {
+//     return (number > 0);
+// }
+
+// // console.log(filterArray([1, 2, 3, 4, -1, false], isPos));
 
 
 
+// Exercise 4
 
+/* Write a function called longestWord that takes a string as argument, and returns the 
+longest word in the string. You should use Array.prototype.reduce to do your work.
+
+Hint: You can use String.prototype.split to split the string into an array of words. */
+
+function longestWord(str) {
+    var splitStr = str.split(" ");
+
+  return splitStr.reduce(function(initialWord, nextWord) {
+        if (nextWord.length > initialWord.length) {
+            return nextWord;
+        }
+        else {
+            return initialWord;
+        }
+    }, "");
+}
+
+
+console.log(longestWord("I am taking the decodeMTL coding bootcamp."))
