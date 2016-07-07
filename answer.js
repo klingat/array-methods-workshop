@@ -13,3 +13,17 @@ function printPositives(array) {
 }
 
 printPositives([1, -2, 3, -4, 5, -6, 7, 8]);
+
+
+//Exercise 2
+
+/* Similar to the previous exercise, write a function called getPositives that takes an 
+array and uses the filter method to return a new array with only the positive numbers. */
+
+function getPositives (array) {
+    return array.filter(function (item) {
+        return item > 0;
+        });
+}
+
+console.log(getPositives([1, -2, 3, -4, 5, -6, 7, 8]));
