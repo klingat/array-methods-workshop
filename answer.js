@@ -218,4 +218,46 @@ function countChars(str) {
 }
 
 
-console.log(countChars("hello world"))
+console.log(countChars("hello world"));
+
+
+
+//Exercise 9
+
+/* Our database returns to us an array of people objects, and each of them has a unique ID 
+that the database uses to refer to it. 
+
+Write a function called peopleById that takes an array of people and returns an object 
+where each person is keyed by their unique ID.
+*/
+ var people = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
+
+function peopleByID (arr) {
+    return people.reduce(function (obj, pplObj) {
+        
+        obj[pplObj.id] = pplObj;
+        
+        return obj;
+    }, {})
+}
+
+console.log(peopleByID(people));
